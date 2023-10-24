@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "URL Modifier",
+  "name": "MAX URL Toggler",
   "version": "1.0",
-  "description": "Modify and open URL",
+  "description": "Modify and open Preview and Prod URLs",
   "permissions": ["tabs", "activeTab"],
   "background": {
     "service_worker": "background.js"

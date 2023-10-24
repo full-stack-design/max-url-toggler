@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "URL Modifier",
+  "version": "1.0",
+  "description": "Modify and open URL",
+  "permissions": ["tabs", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

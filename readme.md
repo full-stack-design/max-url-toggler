@@ -30,6 +30,9 @@
 5. **Extension Should Appear**
     - You should now see the `MaxUrlToggler` extension icon in your Chrome toolbar.
 
+**Note**: 
+    To enhance your workflow, enable the "Allow in Incognito" option for this extension. To do so, click on "Details," and toggle on the "Allow in Incognito" switch.
+
 6. **Test the Extension**
     - Navigate to any page under `www.max.com` or `web-preview.prd.api.discomax.com` and click the extension icon in your toolbar, then click "Modify URL". The URL should switch to the other version and open in a new tab.
 

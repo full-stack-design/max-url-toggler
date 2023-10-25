@@ -4,3 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.runtime.sendMessage({type: "modifyUrl"});
   });
 });
+
+document.getElementById('modifyUrl').addEventListener('click', function() {
+  const openInNewTab = document.getElementById('newTab').checked;
+  chrome.runtime.sendMessage({type: 'modifyUrl', newTab: openInNewTab});
+});
+

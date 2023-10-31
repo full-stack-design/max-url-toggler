@@ -1,7 +1,10 @@
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'modifyUrl') {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      const currentUrl = tabs[0].url;
+      const currentTab = tabs[0];
+      if (!currentTab) return;
+
+      const currentUrl = currentTab.url;
       const urlObject = new URL(currentUrl);
       
       if (urlObject.host === 'www.max.com') {
@@ -13,9 +16,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       }
       
       if (message.newTab) {
-        chrome.tabs.create({ url: urlObject.toString() });
+        chrome.tabs.create({ url: urlObject.toString(), active: false });
       } else {
-        chrome.tabs.update(tabs[0].id, { url: urlObject.toString() });
+        chrome.tabs.update(currentTab.id, { url: urlObject.toString() });
       }
     });
   }
